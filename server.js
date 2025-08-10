@@ -58,7 +58,10 @@ app.get('/api/health', (req, res) => {
     environment: process.env.NODE_ENV || 'development'
   })
 })
-
+//check backend is running 
+app.get("/", (req, res) => {
+  res.send("Backend is running!");
+});
 // Global error handling middleware
 app.use((err, req, res, next) => {
   logger.error('Unhandled error:', err)
@@ -82,6 +85,7 @@ app.use('*', (req, res) => {
 })
 
 const PORT = process.env.PORT || 5000
+
 
 app.listen(PORT, () => {
   logger.info(`Server running on port ${PORT}`)
