@@ -6,6 +6,7 @@ dist/
 
 # Environment variables
 .env
+server.js
 
 # Logs
 npm-debug.log*
